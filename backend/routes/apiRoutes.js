@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const axios = require('axios');
 const pool = require('../config/db');
 const router = express.Router();
@@ -22,4 +22,4 @@ router.get('/me', async (req, res) => {
 });
 
 
-module.exports = router;
+module.exports = router;*/
