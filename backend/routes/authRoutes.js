@@ -25,6 +25,18 @@ router.get('/login', (req, res) => {
     res.redirect(`https://accounts.spotify.com/authorize?${params.toString()}`);
 });
 
+
+//Logout
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error("Session destruction error:", err);
+            return res.status(500).send('Logout failed');
+        }
+        res.redirect('http://localhost:3001'); // Redirect to frontend after logout
+    });
+});
+
 // Callback Route
 router.get('/callback', async (req, res) => {
     const code = req.query.code;
